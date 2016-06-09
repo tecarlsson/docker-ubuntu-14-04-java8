@@ -1,12 +1,26 @@
 # docker-ubuntu-14-04-java8
 
-A Docker container for Java JDK 8 on Ubuntu 14.04
+A adhoc Docker container for building our code with yocto.
 
-## Details
-
-- Ubuntu 14.04 x64 (Trusty)
-- Oracle Java JDK 8
+## Installed dependencies
+Java JDK 8
+build-essential
+git
+gawk
+texinfo
+chrpath
+pkg-config
+libpulse-dev
+autoconf
+libsdl1.2-dev
+libtool
+lzop
+corkscrew
+maven
+diffstat
 
 ## Usage
-
-    $ sudo docker pull jared314/ubuntu-14-04-java8
+Clone
+Configure maven settings.xml in current directory
+Build docker image
+Run with the build folder mount at /yocto
