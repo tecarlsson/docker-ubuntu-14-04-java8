@@ -23,4 +23,4 @@ A adhoc Docker container for building our code with yocto.
 1. Clone
 2. Configure maven settings.xml in current directory
 3. Build docker image
-4. Run with the build folder mount at /yocto
+4. Run with the build folder mount at volume /yocto and optional maven folder mounted at volume /home/builder/.m2/
