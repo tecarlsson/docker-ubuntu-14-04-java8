@@ -31,12 +31,12 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV PATH $JAVA_HOME/bin:$PATH
 
-VOLUME /yocto
-ADD start_build.sh /buildscript/start_build.sh
 RUN useradd --create-home --shell /bin/bash builder
-ADD settings.xml /home/builder/.m2/settings.xml
-RUN chown builder:builder /home/builder/.m2
-
 USER builder
+VOLUME /yocto /home/builder/.m2/
+ADD start_build.sh /buildscript/start_build.sh
+ADD settings.xml /home/builder/.m2/settings.xml
+#RUN chown builder:builder /home/builder/.m2
+
 WORKDIR /yocto
 ENTRYPOINT ["/buildscript/start_build.sh"]
