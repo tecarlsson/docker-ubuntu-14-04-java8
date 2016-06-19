@@ -2,6 +2,8 @@
 
 A adhoc Docker container for building our code with yocto.
 
+docker run -it -v <path-to-yocto-folder>:/yocto tecarlsson/docker-ubuntu-14-04-java8 <image-to-build>
+
 ## Installed dependencies
 - Java JDK 8
 - build-essential
