@@ -1,8 +1,12 @@
-# docker-ubuntu-14-04-java8
+# docker-yocto-builder
 
-A adhoc Docker container for building our code with yocto.
+A adhoc Docker container for building our yocto project.
 
-docker run -it -v /path/to/yocto/:/yocto tecarlsson/docker-ubuntu-14-04-java8 image-to-build
+## Run image
+docker run -it -v /path/to/yocto/:/yocto tecarlsson/docker-yocto-builder image-to-build
+
+Optional mount a folder or volume to /home/builder/.m2/repo where maven
+repository is located if provided settings.xml is used.
 
 ## Installed dependencies
 - Java JDK 8
@@ -21,8 +25,8 @@ docker run -it -v /path/to/yocto/:/yocto tecarlsson/docker-ubuntu-14-04-java8 im
 - maven
 - diffstat
 
-## Usage
+## Build own image
 1. Clone
 2. Configure maven settings.xml in current directory
 3. Build docker image
-4. Run with the build folder mount at volume /yocto and optional maven folder mounted at volume /home/builder/.m2/
+4. Run with the build folder mount at volume /yocto and optional maven folder mounted at volume /home/builder/.m2/repo

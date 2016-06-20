@@ -33,10 +33,9 @@ ENV PATH $JAVA_HOME/bin:$PATH
 
 RUN useradd --create-home --shell /bin/bash builder
 USER builder
-VOLUME /yocto /home/builder/.m2/
+VOLUME /yocto /home/builder/.m2/repo
 ADD start_build.sh /buildscript/start_build.sh
 ADD settings.xml /home/builder/.m2/settings.xml
-#RUN chown builder:builder /home/builder/.m2
 
 WORKDIR /yocto
 ENTRYPOINT ["/buildscript/start_build.sh"]
